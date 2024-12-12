@@ -34,7 +34,6 @@ app/page.tsx
 
 const HomePage = () => {
 return (
-
 <div>
 <h1 className='text-7xl'>HomePage</h1>
 </div>
@@ -50,7 +49,6 @@ app/about/page.tsx
 
 const AboutPage = () => {
 return (
-
 <div>
 <h1 className='text-7xl'>AboutPage</h1>
 </div>
@@ -103,7 +101,6 @@ children,
 children: React.ReactNode;
 }>) {
 return (
-
 <html lang='en'>
 <body>
 <nav>hello there</nav>
@@ -119,7 +116,6 @@ import Link from 'next/link';
 
 function Navbar() {
 return (
-
 <nav className='max-w-3xl mx-auto py-4 flex gap-x-4'>
 <Link href='/'>Home</Link>
 <Link href='/counter'>Counter</Link>
@@ -154,7 +150,6 @@ children,
 children: React.ReactNode;
 }>) {
 return (
-
 <html lang='en'>
 <body className={inter.className}>
 <nav>hello there</nav>
@@ -204,7 +199,6 @@ import { useState } from 'react';
 function Counter() {
 const [count, setCount] = useState(0);
 return (
-
 <div className='flex flex-col items-center w-[100px]'>
 <p className='text-5xl font-bold'>{count}</p>
 <button
@@ -223,7 +217,6 @@ import Counter from '@/components/Counter';
 
 function CounterPage() {
 return (
-
 <section>
 <h1 className='text-6xl mb-16'>Page Content</h1>
 <Counter />
@@ -251,7 +244,6 @@ const response = await fetch(url);
 const data: Tour[] = await response.json();
 console.log(data);
 return (
-
 <section>
 <h1 className='text-3xl mb-4'>Tours</h1>
 
@@ -307,7 +299,6 @@ layout.tsx
 
 function ToursLayout({ children }: { children: React.ReactNode }) {
 return (
-
 <div>
 <header className='py-2 w-1/2 bg-slate-500 rounded mb-4'>
 <h1 className='text-3xl text-white text-center'>Nested Layout</h1>
@@ -323,7 +314,6 @@ const page = ({ params }: { params: { id: string } }) => {
 console.log(params);
 
 return (
-
 <div>
 <h1 className='text-4xl'>ID : {params.id}</h1>
 </div>
@@ -374,7 +364,6 @@ const url = 'https://www.course-api.com/images/tours/tour-1.jpeg';
 
 const page = async ({ params }: { params: { id: string } }) => {
 return (
-
 <div>
 <h1 className='text-4xl'>ID : {params.id}</h1>
 <section className='flex gap-x-4 mt-4'>
@@ -406,7 +395,6 @@ const url = 'https://www.course-api.com/images/tours/tour-1.jpeg';
 
 const page = async ({ params }: { params: { id: string } }) => {
 return (
-
 <div>
 <h1 className='text-4xl'>ID : {params.id}</h1>
 <section className='flex gap-x-4 mt-4'>
@@ -567,7 +555,6 @@ import { myAction } from './actions';
 
 export default function ClientComponent() {
 return (
-
 <form action={myAction}>
 <button type='submit'>Add to Cart</button>
 </form>
@@ -581,7 +568,6 @@ import UsersList from '@/components/UsersList';
 function ActionsPage() {
 return (
 <>
-
 <Form />
 <UsersList />
 </>
@@ -596,7 +582,6 @@ console.log('creating user....');
 
 function Form() {
 return (
-
 <form action={createUser} className={formStyle}>
 <h2 className='text-2xl capitalize mb-4'>create user</h2>
 <input
@@ -682,7 +667,6 @@ import { fetchUsers } from '@/utils/actions';
 async function UsersList() {
 const users = await fetchUsers();
 return (
-
 <div className='mt-4'>
 {users.length ? (
 <div>
@@ -780,7 +764,6 @@ create components/DeleteButton
 refactor UsersList
 function DeleteButton({ id }: { id: string }) {
 return (
-
 <form>
 <button
         type='submit'
@@ -829,7 +812,6 @@ import { deleteUser } from '@/utils/actions';
 
 function DeleteButton({ id }: { id: string }) {
 return (
-
 <form action={deleteUser}>
 <input type='hidden' name='id' value={id} />
 <button
@@ -847,7 +829,6 @@ import { deleteUser, removeUser } from '@/utils/actions';
 function DeleteButton({ id }: { id: string }) {
 const removeUserWithId = removeUser.bind(null, id);
 return (
-
 <form action={removeUserWithId}>
 <input type='hidden' name='name' value='shakeAndBake' />
 <button
@@ -955,11 +936,3 @@ return NextResponse.redirect(new URL('/', request.url));
 export const config = {
 matcher: ['/about/:path*', '/tours/:path*'],
 };
-Local Build
-cleanup middleware
-fix css in UsersList.tsx
-remove all users from 'users.json'
-'npm run build' followed by 'npm start'
-Caching
-Vercel Video
-Docs
