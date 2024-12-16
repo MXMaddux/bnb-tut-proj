@@ -2,12 +2,7 @@
 import { readFile, writeFile } from "fs/promises";
 import { revalidatePath } from "next/cache";
 // import { redirect } from "next/navigation";
-
-type User = {
-  id: string;
-  firstName: string;
-  lastName: string;
-};
+import { User } from "@/utils/types";
 
 export const createUser = async (prevState: any, formData: FormData) => {
   "use server";

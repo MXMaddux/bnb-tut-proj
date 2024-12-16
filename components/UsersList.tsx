@@ -26,3 +26,38 @@ async function UsersList() {
   );
 }
 export default UsersList;
+
+// AI
+// import { useEffect, useState } from "react";
+// import { fetchUsers } from "@/utils/actions";
+// import { User } from "@/types";
+
+// const UsersList = () => {
+//   const [users, setUsers] = useState<User[]>([]); // Define the state type explicitly
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const data: User[] = await fetchUsers(); // Ensure 'fetchUsers' returns the correct type
+//       setUsers(data); // No type conflict now
+//       setLoading(false);
+//     };
+//     fetchData();
+//   }, []);
+
+//   if (loading) {
+//     return <p>Loading...</p>;
+//   }
+
+//   return (
+//     <ul>
+//       {users.map((user) => (
+//         <li key={user.id}>
+//           {user.firstName} {user.lastName}
+//         </li> // TypeScript now recognizes 'id' and 'name'
+//       ))}
+//     </ul>
+//   );
+// };
+
+// export default UsersList;
